@@ -17,6 +17,9 @@ const Header = () => {
           <li>
             <a href="#">Serviços</a>
           </li>
+          <li>
+            <a href="#">Fale conosco</a>
+          </li>
           <li></li>
         </ul>
         <button className="border-2 border-black rounded-full px-5 py-2">Inscreva-se</button>
