@@ -12,14 +12,14 @@ const Header = () => {
         </div>
         <ul className="flex font-medium gap-8 text-xl">
           <li>
-            <a href="#">Recommendations</a>
+            <a href="#">Recomendações</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#">Serviços</a>
           </li>
           <li></li>
         </ul>
-        <button className="border-2 border-black rounded-full px-5 py-2">Subscribe</button>
+        <button className="border-2 border-black rounded-full px-5 py-2">Inscreva-se</button>
       </nav>
     </header>
   );
