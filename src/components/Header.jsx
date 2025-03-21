@@ -7,7 +7,7 @@ const Header = () => {
         <div>
           <a href="#" className="font-bold text-2xl flex items-center text-primary-blue">
             <img src={Logo} alt="" className="size-32" />
-            <span className="-translate-x-2">plano B</span>
+            <p className="-translate-x-2">plano B</p>
           </a>
         </div>
         <ul className="flex font-medium gap-8 text-xl">
