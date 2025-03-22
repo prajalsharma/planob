@@ -21,7 +21,7 @@ const links = [
 
 const sidebarVariants = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 168px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 168.5px 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -29,7 +29,7 @@ const sidebarVariants = {
     },
   }),
   closed: {
-    clipPath: "circle(19px at 168px 40px)",
+    clipPath: "circle(19px at 168.5px 40px)",
     transition: {
       delay: 0.2,
       type: "spring",
