@@ -70,7 +70,7 @@ const Header = () => {
   const largeScreen = useMediaQuery("(min-width: 768px)");
 
   return (
-    <header className="flex items-center justify-between py-2 pl-2 pr-5 md:pl-4 md:pr-7 md:py-0 fixed w-full z-10 bg-white">
+    <header className="flex items-center justify-between py-2 pl-2 pr-5 md:pl-0 md:pr-7 md:py-0 fixed w-full z-10 bg-white">
       {isOpen && (
         <div
           className="fixed top-0 left-0 w-screen h-screen bg-black/80 z-2"
@@ -81,7 +81,7 @@ const Header = () => {
       <nav className="bg-white flex items-center w-full justify-between">
         <div>
           <a href="#" className="font-bold text-2xl flex items-center text-primary-blue">
-            <img src={Logo} alt="" className="size-17 md:size-26" />
+            <img src={Logo} alt="" className="size-17 md:size-29.5" />
             <p className="-translate-x-2">plano B</p>
           </a>
         </div>
