@@ -1,10 +1,10 @@
-// Recommendations.jsx
+// Services.jsx
 import React from 'react';
 
-export default function Recommendations() {
+export default function Services() {
   return (
     <section>
-      <h1>Recommendations</h1>
+      <h1>Services</h1>
       {/* Your page content goes here */}
     </section>
   );
