@@ -1,15 +1,37 @@
+import { motion } from "motion/react";
+import { Diamond } from "lucide-react";
+
+const headerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1.1 } },
+};
+
+const serviceCardVariants = {
+  initial: { opacity: 0, y: -50 },
+  animate: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
+
 export default function Services() {
   return (
-    <div className="max-w-[56.25rem] flex flex-col items-center justify-center gap-8 p-4 mx-auto my-7">
-      <div className="flex flex-col items-center justify-center">
+    <div className="max-w-[56.25rem] flex flex-col items-center justify-center gap-8 p-4 mx-auto my-4">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={headerVariants}
+        className="flex flex-col items-center justify-center text-center my-5">
         <h1 className="text-[2.5rem] font-bold text-primary-blue">Serviços da Plano B</h1>
         <p className="text-lg text-blue-2">
           Especializada em educação e segurança relacionadas ao Bitcoin
         </p>
-      </div>
+      </motion.div>
 
       <div className="flex flex-col gap-7.5">
-        <section className="service-card">
+        <motion.section
+          initial="initial"
+          variants={serviceCardVariants}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.5 }}
+          className="service-card">
           <h2>
             <span className="icon" role="img" aria-label="Oferta">
               🛟
@@ -23,21 +45,35 @@ export default function Services() {
           </p>
           <ul>
             <li>
-              <strong>Educação sobre Bitcoin:</strong> Explicamos de maneira simples o que é o
-              Bitcoin, como funciona e para que serve.
+              <Diamond />
+              <span>
+                <strong>Educação sobre Bitcoin:</strong> Explicamos de maneira simples o que é o
+                Bitcoin, como funciona e para que serve.
+              </span>
             </li>
             <li>
-              <strong>Consultoria em segurança:</strong> Ensinamos as melhores práticas para guardar
-              seus bitcoins de forma segura.
+              <Diamond />
+              <span>
+                <strong>Consultoria em segurança:</strong> Ensinamos as melhores práticas para
+                guardar seus bitcoins de forma segura.
+              </span>
             </li>
             <li>
-              <strong>Parceria com a Liana Wallet:</strong> Oferecemos soluções avançadas para
-              proteção de ativos digitais.
+              <Diamond />
+              <span>
+                <strong>Parceria com a Liana Wallet:</strong> Oferecemos soluções avançadas para
+                proteção de ativos digitais.
+              </span>
             </li>
           </ul>
-        </section>
+        </motion.section>
 
-        <section className="service-card">
+        <motion.section
+          initial="initial"
+          variants={serviceCardVariants}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.6 }}
+          className="service-card">
           <h2>
             <span className="icon" role="img" aria-label="Recuperação">
               🔐
@@ -50,17 +86,28 @@ export default function Services() {
           </p>
           <ul>
             <li>
-              <strong>Plano de recuperação:</strong> Ajudamos você a criar um sistema seguro para
-              recuperar seus bitcoins caso perca acesso às suas chaves.
+              <Diamond />
+              <span>
+                <strong>Plano de recuperação:</strong> Ajudamos você a criar um sistema seguro para
+                recuperar seus bitcoins caso perca acesso às suas chaves.
+              </span>
             </li>
             <li>
-              <strong>Planejamento de herança:</strong> Desenvolvemos estratégias para garantir que
-              seus bitcoins sejam transmitidos aos seus herdeiros conforme sua vontade.
+              <Diamond />
+              <span>
+                <strong>Planejamento de herança:</strong> Desenvolvemos estratégias para garantir
+                que seus bitcoins sejam transmitidos aos seus herdeiros conforme sua vontade.
+              </span>
             </li>
           </ul>
-        </section>
+        </motion.section>
 
-        <section className="service-card">
+        <motion.section
+          initial="initial"
+          variants={serviceCardVariants}
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.7 }}
+          className="service-card">
           <h2>
             <span className="icon" role="img" aria-label="Escolha">
               🎯
@@ -68,16 +115,28 @@ export default function Services() {
             Por que escolher a Plano B
           </h2>
           <ul>
-            <li>Linguagem simples e direta</li>
-            <li>Foco exclusivo em Bitcoin</li>
-            <li>Soluções práticas para segurança e planejamento financeiro</li>
-            <li>Suporte personalizado para suas necessidades</li>
+            <li>
+              <Diamond />
+              Linguagem simples e direta.
+            </li>
+            <li>
+              <Diamond />
+              Foco exclusivo em Bitcoin.
+            </li>
+            <li>
+              <Diamond />
+              Soluções práticas para segurança e planejamento financeiro.
+            </li>
+            <li>
+              <Diamond />
+              Suporte personalizado para suas necessidades.
+            </li>
           </ul>
           <p>
             Com a Plano B, você aprende a usar o Bitcoin de forma segura e eficiente, garantindo a
             proteção do seu patrimônio digital para o presente e o futuro.
           </p>
-        </section>
+        </motion.section>
       </div>
     </div>
   );

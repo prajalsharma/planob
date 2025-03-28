@@ -136,7 +136,7 @@ body {
 .service-card {
   border: 1px solid #bac6e4; /* Light blue border */
   box-shadow: 0 4px 8px rgba(33, 64, 154, 0.1); /* Subtle blue shadow */
-  @apply rounded-xl p-5 transition flex flex-col gap-2;
+  @apply rounded-xl p-5 flex flex-col gap-2;
 
   &:hover {
     box-shadow: 0 8px 16px rgba(33, 64, 154, 0.15);
@@ -147,6 +147,15 @@ body {
 
     .icon {
       @apply mr-2;
+    }
+  }
+
+  ul {
+    li {
+      @apply flex gap-2 items-start;
+      svg {
+        @apply text-blue-2 size-3 flex-shrink-0 translate-y-1.5;
+      }
     }
   }
 }
