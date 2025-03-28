@@ -3,15 +3,16 @@ import Logo from "../assets/planob.svg";
 import LanguageSelector from "./LanguageSelector";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { MenuToggle } from "./MenuToggle";
+import { Link } from "react-router-dom";
 
 const links = [
   {
     name: "Recomendações",
-    url: "#",
+    url: "/recommendacoes",
   },
   {
     name: "Serviços",
-    url: "#",
+    url: "/servicos",
   },
   {
     name: "Fale conosco",
