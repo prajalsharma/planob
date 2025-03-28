@@ -64,7 +64,7 @@ const Header = () => {
   const largeScreen = useMediaQuery("(min-width: 768px)");
 
   return (
-    <header className="flex items-center justify-between py-2 pl-2 pr-5 md:pl-0 md:pr-7 md:py-0 fixed w-full z-10 bg-white shadow-sm">
+    <header className="flex items-center justify-between py-2 pl-2 pr-5 md:pl-0 md:pr-7 md:py-0 fixed w-full z-10 bg-white shadow">
       {isOpen && (
         <div
           className="fixed top-0 left-0 w-screen h-screen bg-black/80 z-2"
@@ -74,36 +74,22 @@ const Header = () => {
 
       <nav className="bg-white flex items-center w-full justify-between">
         <div>
-          <Link
-            to="/"
-            className="font-bold text-2xl flex items-center text-black"
-          >
+          <Link to="/" className="font-bold text-2xl flex items-center text-primary-blue">
             <img src={Logo} alt="Plano B logo" className="size-17 md:size-29.5" />
             <p className="-translate-x-2">plano B</p>
           </Link>
         </div>
 
-        {largeScreen ? (
+        {largeScreen && (
           <ul className="font-medium gap-8 text-lg flex">
             {links.map((link, index) => (
               <li key={index}>
-                {link.url.startsWith("#") ? (
-                  <a href={link.url} className="hover:text-primary-blue transition-colors">
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    to={link.url}
-                    className="hover:text-primary-blue transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                )}
+                <Link to={link.url} className="hover:text-primary-blue transition-colors">
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
-        ) : (
-          <div />
         )}
 
         <motion.div className="flex items-center gap-4 relative">
@@ -112,27 +98,17 @@ const Header = () => {
             <motion.div
               initial={false}
               animate={isOpen ? "open" : "closed"}
-              className="relative grid place-items-center z-50"
-            >
+              className="relative grid place-items-center z-50">
               <motion.div
                 className="absolute -top-[30.5px] -right-5 w-50 h-screen bg-primary-blue"
                 variants={sidebarVariants}
               />
-              <motion.ul
-                variants={listVariants}
-                className="absolute -left-34 w-full h-full top-11"
-              >
+              <motion.ul variants={listVariants} className="absolute -left-34 w-full h-full top-11">
                 {links.map((link, index) => (
                   <motion.li variants={itemVariants} key={index} className="py-4">
-                    {link.url.startsWith("#") ? (
-                      <a href={link.url} className="text-white">
-                        {link.name}
-                      </a>
-                    ) : (
-                      <Link to={link.url} className="text-white">
-                        {link.name}
-                      </Link>
-                    )}
+                    <Link to={link.url} className="text-white" onClick={() => toggleOpen()}>
+                      {link.name}
+                    </Link>
                   </motion.li>
                 ))}
               </motion.ul>
