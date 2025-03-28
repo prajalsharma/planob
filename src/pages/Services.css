@@ -1,100 +1,92 @@
-/* Services.css */
+/* src/pages/Services.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 .services-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
-    color: #333;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #21409a; /* Primary blue from brand guide */
+}
+
+.services-header p {
+  font-size: 1.2em;
+  color: #90a0cd; /* Secondary blue tone */
+}
+
+.card {
+  background: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #bac6e4; /* Light blue border */
+  box-shadow: 0 4px 8px rgba(33, 64, 154, 0.1); /* Subtle blue shadow */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #2c3e50;
-  }
-  
-  header p {
-    font-size: 1.2em;
-    color: #7f8c8d;
-  }
-  
-  .card {
-    background: #fff;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
-  }
-  
-  .delay-1 {
-    animation-delay: 0.2s;
-  }
-  
-  .delay-2 {
-    animation-delay: 0.4s;
-  }
-  
-  .delay-3 {
-    animation-delay: 0.6s;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #34495e;
-    display: flex;
-    align-items: center;
-  }
-  
-  h2 .icon {
-    margin-right: 10px;
-    font-size: 1.2em;
-  }
-  
-  p {
-    margin-bottom: 15px;
-  }
-  
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  ul li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 10px;
-  }
-  
-  ul li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: #27ae60;
-    font-size: 1.1em;
-    top: 0;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-  }
-  
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #21409a; /* Use primary blue for headings */
+  display: flex;
+  align-items: center;
+}
+
+h2 .icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* No pseudo-element for list items – green tick marks removed */
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(33, 64, 154, 0.15);
+  transition: all 0.3s ease;
+}

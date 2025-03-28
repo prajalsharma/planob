@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import { motion, useCycle } from "motion/react";
 import Logo from "../assets/planob.svg";
 import LanguageSelector from "./LanguageSelector";
@@ -81,7 +82,8 @@ const Header = () => {
 
       <nav className="bg-white flex items-center w-full justify-between">
         <div>
-          <a href="#" className="font-bold text-2xl flex items-center text-primary-blue">
+          {/* Remove any text color override to revert to the original logo style */}
+          <a href="#" className="font-bold text-2xl flex items-center">
             <img src={Logo} alt="" className="size-17 md:size-29.5" />
             <p className="-translate-x-2">plano B</p>
           </a>
@@ -90,9 +92,12 @@ const Header = () => {
           <ul className="font-medium gap-8 text-lg flex">
             {links.map((link, index) => (
               <li key={index}>
-                <a href={link.url} className="hover:text-primary-blue transition-colors">
+                <Link
+                  to={link.url}
+                  className="hover:text-primary-blue transition-colors"
+                >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -106,17 +111,25 @@ const Header = () => {
             <motion.div
               initial={false}
               animate={isOpen ? "open" : "closed"}
-              className="relative grid place-items-center z-50">
+              className="relative grid place-items-center z-50"
+            >
               <motion.div
                 className="absolute -top-[30.5px] -right-5 w-50 h-screen bg-primary-blue"
                 variants={sidebarVariants}
               />
-              <motion.ul variants={listVariants} className="absolute -left-34 w-full h-full top-11">
+              <motion.ul
+                variants={listVariants}
+                className="absolute -left-34 w-full h-full top-11"
+              >
                 {links.map((link, index) => (
-                  <motion.li variants={itemVariants} key={index} className="py-4">
-                    <a href={link.url} className="text-white">
+                  <motion.li
+                    variants={itemVariants}
+                    key={index}
+                    className="py-4"
+                  >
+                    <Link to={link.url} className="text-white">
                       {link.name}
-                    </a>
+                    </Link>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -128,4 +141,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;
