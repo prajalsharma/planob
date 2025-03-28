@@ -1,0 +1,46 @@
+/* src/components/BlogCard.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.blog-card {
+  display: flex;
+  background-color: #ffffff;
+  border: 1px solid #bac6e4;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(33, 64, 154, 0.06);
+  transition: transform 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(33, 64, 154, 0.12);
+}
+
+.blog-image {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.blog-content {
+  padding: 15px;
+  flex: 1;
+}
+
+.blog-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #21409a;
+  font-weight: 600;
+}
+
+.blog-content p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #444;
+}

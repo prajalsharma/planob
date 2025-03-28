@@ -21,5 +21,8 @@ const Hero = () => {
       </div>
     </section>
   );
+
 };
+console.log("[Hero] Rendered");
+
 export default Hero;
