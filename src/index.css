@@ -15,6 +15,22 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.link-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.4s ease-out;
+  background-color: #21409a;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

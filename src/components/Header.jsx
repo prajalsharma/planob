@@ -84,7 +84,9 @@ const Header = () => {
           <ul className="font-medium gap-8 text-lg flex">
             {links.map((link, index) => (
               <li key={index}>
-                <Link to={link.url} className="hover:text-primary-blue transition-colors">
+                <Link
+                  to={link.url}
+                  className="hover:text-primary-blue transition-colors relative link-underline">
                   {link.name}
                 </Link>
               </li>

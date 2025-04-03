@@ -13,7 +13,7 @@ const serviceCardVariants = {
 
 export default function Services() {
   return (
-    <div className="max-w-[56.25rem] flex flex-col items-center justify-center gap-8 p-4 mx-auto my-4">
+    <div className="max-w-[56.25rem] flex flex-col items-center justify-center gap-8 p-4 mx-auto my-4 pb-20">
       <motion.div
         initial="hidden"
         animate="visible"
