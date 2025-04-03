@@ -1,13 +1,9 @@
 .blog-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
   overflow: hidden;
   background: #fff;
   display: flex;
-  flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .blog-card:hover {
@@ -30,11 +26,10 @@
   line-height: 1.4;
 }
 
-.blog-date {
+.date {
   font-size: 13px;
-  color: #888;
   padding: 0 1rem;
-  margin-bottom: 0.5rem;
+  color: #888;
 }
 
 .blog-description {
@@ -44,33 +39,28 @@
   line-height: 1.6;
 }
 
-/* For pinned cards (if reused in sidebar) */
 .blog-card.pinned {
-  height: auto;
   max-width: 100%;
-  border-radius: 12px;
-  background: #fff;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
 
-.blog-card.pinned img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-.blog-card.pinned .blog-title {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 0.5rem 0.75rem 0 0.75rem;
-  line-height: 1.4;
-}
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
 
-.blog-card.pinned .blog-date {
-  font-size: 12px;
-  color: #888;
-  padding: 0 0.75rem 0.75rem;
+  .blog-title {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem 0 0.75rem;
+  }
+  .blog-date {
+    font-size: 12px;
+
+    color: #888;
+    padding: 0 0.75rem 0.75rem;
+  }
 }
