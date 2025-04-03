@@ -7,6 +7,7 @@ import BlogDetail from "./pages/BlogDetail";
 import Services from "./pages/Services";
 import Recommendations from "./pages/Recommendations";
 import Footer from "./components/Footer";
+import Blogs from "./pages/Blogs";
 
 const App = () => {
   return (
@@ -14,17 +15,10 @@ const App = () => {
       <Header />
       <main className="pt-30">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <BlogList />
-              </>
-            }
-          />
+          <Route path="/" element={<></>} />
           <Route path="/services" element={<Services />} />
           <Route path="/recommendacoes" element={<Recommendations />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
         </Routes>
       </main>

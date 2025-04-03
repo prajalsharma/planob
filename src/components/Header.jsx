@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const links = [
   { name: "Recomendações", url: "/recommendacoes" },
   { name: "Serviços", url: "/services" },
-  { name: "Blog", url: "/" }, // blog previews are on home page
+  { name: "Blogs", url: "/blogs" }, // blog previews are on home page
   { name: "Fale conosco", url: "#contato" },
 ];
 
