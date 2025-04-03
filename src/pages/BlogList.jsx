@@ -4,7 +4,7 @@ import { fetchBeehiivRSS } from "../utils/fetchBeehiivRSS";
 import "./BlogList.css";
 
 // ✅ Manually define slugs for pinned posts
-const PINNED_SLUGS = ["plano-b-e-liana-fecham-parceria-para-simplificar-planos-de-heranca-", "bitcoins-nao-nascem-em-arvores-entenda-a-mineracao-"]; // <-- Replace with actual slugs
+const PINNED_SLUGS = ["plano-b-e-liana-fecham-parceria-para-simplificar-planos-de-heranca-", "bitcoins-nao-nascem-em-arvores-entenda-a-mineracao-"]; // <-- Replace with actual slugs// Replace with actual slugs
 
 export default function BlogList() {
   const [blogs, setBlogs] = useState([]);
@@ -12,18 +12,18 @@ export default function BlogList() {
 
   useEffect(() => {
     fetchBeehiivRSS()
-      .then((data) => {
-        setBlogs(data);
-      })
+      .then((data) => setBlogs(data))
       .catch((error) =>
         console.error("[BlogList] Failed to fetch blogs:", error)
       )
       .finally(() => setIsLoading(false));
   }, []);
 
-  // ✅ Separate pinned and main blogs
+  // ✅ Show all blogs in main list
+  const mainBlogs = blogs;
+
+  // ✅ Pick only the pinned ones by slug for sidebar
   const pinnedBlogs = blogs.filter((b) => PINNED_SLUGS.includes(b.slug));
-  const mainBlogs = blogs.filter((b) => !PINNED_SLUGS.includes(b.slug));
 
   return (
     <div className="blog-page-wrapper">
