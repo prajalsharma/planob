@@ -1,5 +1,5 @@
 // src/pages/BlogDetail.jsx
-import { motion, useScroll } from "motion/react";
+import { motion, useScroll } from "framer-motion";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import "./BlogDetail.css";
 import X from "../assets/x.svg";
@@ -10,12 +10,31 @@ import { useEffect, useState } from "react";
 import { fetchBeehiivRSS } from "@/utils/fetchBeehiivRSS";
 import BlogCard from "@/components/BlogCard";
 
-const socials = [
-  { name: "Twitter", url: "", icon: X },
-  { name: "Telegram", url: "", icon: Telegram },
-  { name: "Facebook", url: "", icon: Facebook },
-  { name: "Farcaster", url: "", icon: Farcaster },
-];
+const generateSocialLinks = (title, slug) => {
+  const blogUrl = `https://planob.vercel.app/blog/${slug}`;
+  return [
+    {
+      name: "Twitter",
+      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(blogUrl)}&text=${encodeURIComponent(title)}`,
+      icon: X,
+    },
+    {
+      name: "Telegram",
+      url: `https://t.me/share/url?url=${encodeURIComponent(blogUrl)}&text=${encodeURIComponent(title)}`,
+      icon: Telegram,
+    },
+    {
+      name: "Facebook",
+      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(blogUrl)}`,
+      icon: Facebook,
+    },
+    {
+      name: "Farcaster",
+      url: `https://warpcast.com/~/compose?text=${encodeURIComponent(title)}%20${encodeURIComponent(blogUrl)}`,
+      icon: Farcaster,
+    },
+  ];
+};
 
 const BlogDetail = () => {
   const { scrollYProgress } = useScroll();
@@ -49,7 +68,7 @@ const BlogDetail = () => {
     );
   }
 
-  const { title, image, pubDate, content, link } = state;
+  const { title, image, pubDate, content } = state;
 
   return (
     <div className="blog-container">
@@ -68,15 +87,18 @@ const BlogDetail = () => {
           })}
         </p>
         <div className="flex gap-2 items-start">
-          {socials.map((social) => (
+          {generateSocialLinks(title, slug).map((social) => (
             <div
               key={social.name}
-              className="bg-[#f0f0f0] rounded-full p-2 flex gap-2 items-center hover:bg-primary-blue transition-colors">
+              className="bg-[#f0f0f0] rounded-full p-2 flex gap-2 items-center hover:bg-primary-blue transition-colors"
+            >
               <a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon">
+                className="social-icon"
+                title={`Share on ${social.name}`}
+              >
                 <img src={social.icon} alt={social.name} className="size-5" />
               </a>
             </div>
