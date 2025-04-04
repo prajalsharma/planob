@@ -15,12 +15,16 @@ const generateSocialLinks = (title, slug) => {
   return [
     {
       name: "Twitter",
-      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(blogUrl)}&text=${encodeURIComponent(title)}`,
+      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+        blogUrl
+      )}&text=${encodeURIComponent(title)}`,
       icon: X,
     },
     {
       name: "Telegram",
-      url: `https://t.me/share/url?url=${encodeURIComponent(blogUrl)}&text=${encodeURIComponent(title)}`,
+      url: `https://t.me/share/url?url=${encodeURIComponent(blogUrl)}&text=${encodeURIComponent(
+        title
+      )}`,
       icon: Telegram,
     },
     {
@@ -30,7 +34,9 @@ const generateSocialLinks = (title, slug) => {
     },
     {
       name: "Farcaster",
-      url: `https://warpcast.com/~/compose?text=${encodeURIComponent(title)}%20${encodeURIComponent(blogUrl)}`,
+      url: `https://warpcast.com/~/compose?text=${encodeURIComponent(title)}%20${encodeURIComponent(
+        blogUrl
+      )}`,
       icon: Farcaster,
     },
   ];
@@ -90,15 +96,13 @@ const BlogDetail = () => {
           {generateSocialLinks(title, slug).map((social) => (
             <div
               key={social.name}
-              className="bg-[#f0f0f0] rounded-full p-2 flex gap-2 items-center hover:bg-primary-blue transition-colors"
-            >
+              className="bg-[#f0f0f0] rounded-full p-2 flex gap-2 items-center hover:bg-primary-blue transition-colors">
               <a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
-                title={`Share on ${social.name}`}
-              >
+                title={`Share on ${social.name}`}>
                 <img src={social.icon} alt={social.name} className="size-5" />
               </a>
             </div>
@@ -122,7 +126,7 @@ const BlogDetail = () => {
       ) : (
         <div className="flex flex-col gap-2 mt-5">
           <h2 className="text-2xl font-semibold">Read More...</h2>
-          <div className="blog-grid py-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {blogs.map((blog, idx) => (
               <BlogCard key={idx} {...blog} />
             ))}
