@@ -1,4 +1,4 @@
-// src/components/Header.jsx
+import { useEffect, useState } from "react";
 import { motion, useCycle } from "motion/react";
 import Logo from "../assets/planob.svg";
 import LanguageSelector from "./LanguageSelector";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const links = [
   { name: "Recomendações", url: "/recommendacoes" },
   { name: "Serviços", url: "/services" },
-  { name: "Blogs", url: "/blogs" }, // blog previews are on home page
+  { name: "Blogs", url: "/blogs" },
   { name: "Fale conosco", url: "#contato" },
 ];
 
@@ -63,8 +63,26 @@ const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const largeScreen = useMediaQuery("(min-width: 768px)");
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="flex items-center justify-between py-2 pl-2 pr-5 md:pl-0 md:pr-7 md:py-0 fixed w-full z-10 bg-white/65 backdrop-blur shadow">
+    <header
+      className={`flex items-center justify-between py-2 pl-2 pr-5 md:pl-0 md:pr-7 md:py-0 fixed w-full z-10 transition-colors duration-300 ${
+        isScrolled ? "bg-white shadow" : "bg-transparent"
+      }`}>
       {isOpen && (
         <div
           className="fixed top-0 left-0 w-screen h-screen bg-black/80 z-2"

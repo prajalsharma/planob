@@ -11,7 +11,6 @@
 }
 
 body {
-  background-color: white;
   font-family: "Poppins", sans-serif;
 }
 
@@ -29,6 +28,18 @@ body {
 
 .link-underline:hover::after {
   transform: scaleX(1);
+}
+
+.first {
+  background-image: linear-gradient(to bottom right, white, #d9e3ff 75%, #c5d6ff 100%);
+}
+
+.second {
+  background-image: linear-gradient(to right, #f0f4ff 50%, #d9e3ff 75%, #c5d6ff 100%);
+}
+
+.fifth {
+  background-image: linear-gradient(to bottom left, #f0f4ff 50%, #d9e3ff 75%, #c5d6ff 100%);
 }
 
 :root {

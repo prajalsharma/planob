@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="text-center py-10 md:py-25 flex flex-col items-center justify-center gap-4">
+    <section className="pt-50 text-center pb-15 flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center gap-4">
         <h1 className="font-bold text-2xl md:text-[2.5rem] flex flex-col items-center gap-2 text-primary-blue">
           <span>Simplificando o Bitcoin,</span>
@@ -21,7 +21,6 @@ const Hero = () => {
       </div>
     </section>
   );
-
 };
 console.log("[Hero] Rendered");
 

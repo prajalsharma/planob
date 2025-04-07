@@ -77,7 +77,7 @@ const BlogDetail = () => {
   const { title, image, pubDate, content } = state;
 
   return (
-    <div className="blog-container">
+    <div className="blog-container pt-40">
       <motion.div
         style={{ scaleX: scrollYProgress }}
         className="fixed bg-primary-blue h-3 inset-0 z-100 origin-left"
