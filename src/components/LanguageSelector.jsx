@@ -59,17 +59,20 @@ const LanguageSelector = () => {
   useEffect(() => {
     const browserLang = navigator.language || navigator.userLanguage;
 
-    const matchedLanguage = languages.find((lang) =>
-      browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
-    );
+    const defaultLang = languages.find((lang) => lang.code === "pt-BR");
+const [selectedLanguage, setSelectedLanguage] = useState(defaultLang);
 
-    if (matchedLanguage) {
-      setSelectedLanguage(matchedLanguage);
-    } else {
-      const defaultLang = languages.find((lang) => lang.code === "pt-BR");
-      setSelectedLanguage(defaultLang);
-    }
-  }, []);
+useEffect(() => {
+  const browserLang = navigator.language || navigator.userLanguage;
+
+  const matchedLanguage = languages.find((lang) =>
+    browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
+  );
+
+  if (matchedLanguage) {
+    setSelectedLanguage(matchedLanguage);
+  }
+}, []);
 
   const handleLanguageChange = (language) => {
     if (selectedLanguage === language) {
