@@ -244,7 +244,7 @@ const FifthSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-3 text-[#1A2B50] flex items-center justify-center gap-2">
           <Calendar size={36} />
-          Contact Us
+          Agendar uma Reunião
         </motion.h2>
       </div>
       <div
