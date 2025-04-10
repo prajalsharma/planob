@@ -1,14 +1,12 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+"use client";
+import { useRouter } from "next/navigation";
 import "./BlogCard.css";
 
 export default function BlogCard({ title, image, description, pubDate, slug, ...rest }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = () => {
-    navigate(`/blog/${slug}`, {
-      state: { title, image, description, pubDate, ...rest },
-    });
+    router.push(`/blogs/${slug}`);
     window.scrollTo(0, 0);
   };
 

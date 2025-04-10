@@ -1,10 +1,12 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion, useCycle } from "motion/react";
-import Logo from "../assets/planob.svg";
+import Image from "next/image";
+import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { MenuToggle } from "./MenuToggle";
-import { Link } from "react-router-dom";
 
 const links = [
   { name: "Blogs", url: "/blogs" },
@@ -90,8 +92,15 @@ const Header = () => {
 
       <nav className="flex items-center w-full justify-between">
         <div>
-          <Link to="/" className="font-bold text-2xl flex items-center text-primary-blue">
-            <img src={Logo} alt="Plano B logo" className="size-17 md:size-29.5" />
+          <Link href="/" className="font-bold text-2xl flex items-center text-primary-blue">
+            <Image
+              width={68}
+              height={68}
+              src="/assets/planob.svg"
+              alt="Plano B logo"
+              className="size-17 md:size-29.5"
+              priority
+            />
             <p className="-translate-x-2">plano B</p>
           </Link>
         </div>
@@ -101,7 +110,7 @@ const Header = () => {
             {links.map((link, index) => (
               <li key={index}>
                 <Link
-                  to={link.url}
+                  href={link.url}
                   className="hover:text-primary-blue transition-colors relative link-underline">
                   {link.name}
                 </Link>
@@ -124,7 +133,7 @@ const Header = () => {
               <motion.ul variants={listVariants} className="absolute -left-34 w-full h-full top-11">
                 {links.map((link, index) => (
                   <motion.li variants={itemVariants} key={index} className="py-4">
-                    <Link to={link.url} className="text-white" onClick={() => toggleOpen()}>
+                    <Link href={link.url} className="text-white" onClick={() => toggleOpen()}>
                       {link.name}
                     </Link>
                   </motion.li>

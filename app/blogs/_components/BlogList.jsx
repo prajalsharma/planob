@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import BlogCard from "../components/BlogCard";
-import { fetchBeehiivRSS } from "../utils/fetchBeehiivRSS";
+"use client";
+import { useEffect, useState } from "react";
+import BlogCard from "./BlogCard";
+import { fetchBeehiivRSS } from "@/utils/fetchBeehiivRSS";
 import "./BlogList.css";
 import { RefreshCcw } from "lucide-react";
 
@@ -67,7 +68,7 @@ export default function BlogList() {
             <button
               className="flex items-center gap-1.5 bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-primary-blue/80 transition group"
               onClick={() => setShowAll(true)}>
-             Carregar Mais
+              Carregar Mais
               <RefreshCcw
                 size={20}
                 className="group-hover:animate-[spin_1s_linear_infinite_reverse]"
@@ -93,13 +94,21 @@ export default function BlogList() {
             <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-2" />
           </div>
           <div className="bg-[#f6f6f6] p-4 rounded-lg">
-            <h4 className="font-bold text-lg">
-              Assine e aprenda a usar Bitcoin com confiança.
-            </h4>
+            <h4 className="font-bold text-lg">Assine e aprenda a usar Bitcoin com confiança.</h4>
             <p className="text-sm text-muted-foreground my-2">
               Inscreva-se na newsletter para receber todas as atualizações.
             </p>
-            <iframe src="https://embeds.beehiiv.com/09dd87db-dd35-4482-897d-1a30c52ec426?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+            <iframe
+              src="https://embeds.beehiiv.com/09dd87db-dd35-4482-897d-1a30c52ec426?slim=true"
+              data-test-id="beehiiv-embed"
+              frameBorder="0"
+              scrolling="no"
+              style={{
+                margin: 0,
+                borderRadius: "0px !important",
+                backgroundColor: "transparent",
+              }}
+              className="w-full h-14"></iframe>
           </div>
         </div>
       </aside>

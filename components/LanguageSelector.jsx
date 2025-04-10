@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { Languages } from "lucide-react";
 import {
   DropdownMenu,
@@ -7,66 +9,64 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-import China from "../assets/flags/china.svg";
-import Spain from "../assets/flags/spain.svg";
-import India from "../assets/flags/india.svg";
-import Japan from "../assets/flags/japan.svg";
-import USA from "../assets/flags/usa.svg";
-import Brazil from "../assets/flags/brazil.svg";
-
 const languages = [
   {
     name: "Portuguese",
     code: "pt",
     country: "BR",
-    flag: Brazil,
+    flag: "/assets/flags/brazil.svg",
   },
   {
     name: "English",
     code: "en",
     country: "US",
-    flag: USA,
+    flag: "/assets/flags/usa.svg",
   },
   {
     name: "Spanish",
     code: "es",
     country: "ES",
-    flag: Spain,
+    flag: "/assets/flags/spain.svg",
   },
   {
     name: "Hindi",
     code: "hi",
     country: "IN",
-    flag: India,
+    flag: "/assets/flags/india.svg",
   },
   {
     name: "Chinese",
     code: "zh-CN",
     country: "CN",
-    flag: China,
+    flag: "/assets/flags/china.svg",
   },
   {
     name: "Japanese",
     code: "ja",
     country: "JP",
-    flag: Japan,
+    flag: "/assets/flags/japan.svg",
   },
 ];
 
 const LanguageSelector = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
-  const handleLanguageChange = (language) => {
-    setSelectedLanguage(language);
+  const handleLanguageChange = (lang) => {
+    setSelectedLanguage(lang);
 
-    // Try to trigger the Google Translate dropdown
-    const selectEl = document.querySelector(".goog-te-combo");
-    if (selectEl) {
-      selectEl.value = language.code;
-      selectEl.dispatchEvent(new Event("change"));
-    } else {
-      console.warn("Google Translate dropdown not found in DOM.");
-    }
+    const fromLang = "pt"; // original language of your content
+    const toLang = lang.code;
+
+    // If same language, stay on current page
+    if (toLang === fromLang) return;
+
+    const currentUrl = window.location.href;
+
+    // Open translated version in new tab
+    const translateUrl = `https://translate.google.com/translate?hl=${toLang}&sl=${fromLang}&u=${encodeURIComponent(
+      currentUrl
+    )}`;
+    window.open(translateUrl, "_blank");
   };
 
   return (
@@ -82,11 +82,8 @@ const LanguageSelector = () => {
             key={index}
             onClick={() => handleLanguageChange(language)}
             className={`group my-1 justify-between ${
-              selectedLanguage.code === language.code
-                ? "bg-primary-blue text-white"
-                : ""
-            }`}
-          >
+              selectedLanguage.code === language.code ? "bg-primary-blue text-white" : ""
+            }`}>
             <div>
               <img
                 src={language.flag}
@@ -98,8 +95,7 @@ const LanguageSelector = () => {
             <span
               className={`group-hover:text-white text-xs text-muted-foreground ${
                 selectedLanguage.code === language.code ? "text-white" : ""
-              }`}
-            >
+              }`}>
               {language.country}
             </span>
           </DropdownMenuItem>

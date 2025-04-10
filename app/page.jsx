@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import {
   BookOpenCheck,
   Calendar,
@@ -9,13 +12,8 @@ import {
   ShieldCheck,
   Target,
 } from "lucide-react";
-import Partner from "../assets/partner.png";
-import PartnerCertificate from "../assets/certificate.png";
-import Profile from "../assets/pfp.jpg";
-import X from "../assets/x-dark.svg";
-import Linkedin from "../assets/linkedin.svg";
 
-const Landing = () => {
+export default function Home() {
   return (
     <>
       <section className="first py-16 px-4 text-center pt-40">
@@ -31,7 +29,8 @@ const Landing = () => {
           <p className="text-lg text-gray-600 mb-10">
             Da educação ao planejamento de herança:
             <br />
-            sua jornada com Bitcoin começa aqui.</p>
+            sua jornada com Bitcoin começa aqui.
+          </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
               Saber Más
@@ -49,8 +48,7 @@ const Landing = () => {
       <FifthSection />
     </>
   );
-};
-export default Landing;
+}
 
 const SecondSection = () => {
   return (
@@ -73,7 +71,7 @@ const SecondSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg shadow-sm p-6 text-center">
+            className="bg-white rounded-lg shadow-sm p-6 text-center flex flex-col justify-between cursor-pointer">
             <div className="text-primary-blue mb-4 flex justify-center items-center">
               <BookOpenCheck size={36} />
             </div>
@@ -93,12 +91,13 @@ const SecondSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg shadow-sm p-6 text-center">
+            className="bg-white rounded-lg shadow-sm p-6 text-center flex flex-col justify-between cursor-pointer">
             <div className="text-primary-blue mb-4 flex justify-center items-center">
               <ShieldCheck size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Consultoria<br /> em Segurança
+              Consultoria
+              <br /> em Segurança
             </h3>
             <p className="text-gray-600 mb-4">
               Aprenda as melhores práticas para armazenar seu Bitcoin com segurança
@@ -115,12 +114,12 @@ const SecondSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg shadow-sm p-6 text-center">
+            className="bg-white rounded-lg shadow-sm p-6 text-center flex flex-col justify-between cursor-pointer">
             <div className="text-primary-blue mb-4 flex justify-center items-center">
               <KeyRound size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-             Heranças e <br /> Recuperação
+              Heranças e <br /> Recuperação
             </h3>
             <p className="text-gray-600 mb-4">Proteja seu futuro com soluções confiáveis</p>
             <a href="/">
@@ -152,7 +151,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center gap-2">
-         Por que escolher o plano B
+          Por que escolher o plano B
           <Target size={36} className="text-white" />
         </motion.h2>
 
@@ -178,7 +177,8 @@ const ThirdSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-base md:text-lg text-white/90 text-center">
-          Com o plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a proteção do seu patrimônio digital no presente e no futuro.
+          Com o plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a
+          proteção do seu patrimônio digital no presente e no futuro.
         </motion.p>
       </div>
     </section>
@@ -207,13 +207,17 @@ const FourthSection = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.05, transition: { duration: 0.15 } }}
           className="flex bg-[#ffffff] rounded-lg shadow-lg items-center justify-center gap-4 mx-auto max-w-2xl">
-          <img
-            src={PartnerCertificate}
+          <Image
+            src="/assets/certificate.png"
+            width={300}
+            height={200}
             alt=""
             className="rounded-lg shadow-lg border border-white/20 h-auto max-w-[45%]"
           />
-          <img
-            src={Partner}
+          <Image
+            src="/assets/partner.png"
+            width={300}
+            height={200}
             alt=""
             className="rounded-lg shadow-lg border border-white/20 h-auto max-w-[45%]"
           />
@@ -258,12 +262,16 @@ const SixthSection = () => {
   return (
     <section className="sixth py-20 bg-white text-center px-4">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">Por que Criei o plano B</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">
+          Por que Criei o plano B
+        </h2>
 
         <div className="flex justify-center mb-6">
-          <img
-            src={Profile}
+          <Image
+            src="/assets/pfp.jpg"
             alt="Rodrigo Carraresi"
+            width={160}
+            height={160}
             className="rounded-full w-40 h-40 object-cover"
           />
         </div>
@@ -286,14 +294,14 @@ const SixthSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
-            <img src={X} alt="" className="size-9" />
+            <Image width={36} height={36} src="/assets/x-dark.svg" alt="" className="size-9" />
           </a>
           <a
             href="https://es.linkedin.com/in/rodrigocarraresi"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
-            <img src={Linkedin} alt="" className="size-9" />
+            <Image width={36} height={36} src="/assets/linkedin.svg" alt="" className="size-9" />
           </a>
         </div>
       </div>
