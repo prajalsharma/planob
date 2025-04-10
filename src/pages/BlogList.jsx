@@ -79,7 +79,7 @@ export default function BlogList() {
 
       <aside className="blog-sidebar lg:w-[300px]">
         <div className="flex items-center gap-4 col-span-2">
-          <h3 className="sidebar-title shrink-0"> Pinned Posts</h3>
+          <h3 className="sidebar-title shrink-0"> Posts Fixados</h3>
           <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-2" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2 w-full">
