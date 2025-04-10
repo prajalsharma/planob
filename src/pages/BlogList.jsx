@@ -67,7 +67,7 @@ export default function BlogList() {
             <button
               className="flex items-center gap-1.5 bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-primary-blue/80 transition group"
               onClick={() => setShowAll(true)}>
-              Load More
+             Carregar Mais
               <RefreshCcw
                 size={20}
                 className="group-hover:animate-[spin_1s_linear_infinite_reverse]"
@@ -89,12 +89,12 @@ export default function BlogList() {
         </div>
         <div className="flex flex-col gap-4 mt-8">
           <div className="flex items-center gap-4 col-span-2">
-            <h3 className="sidebar-title shrink-0">Subscribe</h3>
+            <h3 className="sidebar-title shrink-0">Inscreva-se</h3>
             <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-2" />
           </div>
           <div className="bg-[#f6f6f6] p-4 rounded-lg">
             <h4 className="font-bold text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Assine e aprenda a usar Bitcoin com confiança.
             </h4>
             <p className="text-sm text-muted-foreground my-2">
               Inscreva-se na newsletter para receber todas as atualizações.
