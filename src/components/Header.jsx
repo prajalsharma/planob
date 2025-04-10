@@ -7,8 +7,6 @@ import { MenuToggle } from "./MenuToggle";
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Recomendações", url: "/recommendacoes" },
-  { name: "Serviços", url: "/services" },
   { name: "Blogs", url: "/blogs" },
   { name: "Fale conosco", url: "#contato" },
 ];
@@ -99,7 +97,7 @@ const Header = () => {
         </div>
 
         {largeScreen && (
-          <ul className="font-medium gap-8 text-lg flex">
+          <ul className="font-medium gap-8 text-lg flex mr-40">
             {links.map((link, index) => (
               <li key={index}>
                 <Link
