@@ -8,24 +8,30 @@ export default function Footer() {
           <img src={Logo} alt="plano B" className="size-29.5" />
           <div className="">
             <h4 className="text-xl font-bold">plano B</h4>
-            <p>Clarity and confidence in Bitcoin education.</p>
+            <p>Clareza e confiança na educação sobre Bitcoin.</p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row justify-start gap-4 lg:gap-38 grow">
           <div>
-            <h5 className="font-semibold mb-2">Company</h5>
+            <h5 className="font-semibold mb-2">Contato</h5>
             <ul className="text-sm">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
+              <li>
+    <a href="mailto:admin@plano.club" className="hover:underline">
+      Email
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://www.linkedin.com/company/plano-b?utm_source=www.planob.club&utm_medium=referral"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      LinkedIn
+    </a>
             </ul>
           </div>
-          <div>
-            <h5 className="font-semibold mb-2">Connect</h5>
-            <ul className="text-sm">
-              <li>Email</li>
-              <li>Twitter</li>
-            </ul>
-          </div>
+          
         </div>
       </div>
       <div className="text-center mt-4 mb-2">
