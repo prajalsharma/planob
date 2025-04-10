@@ -7,7 +7,7 @@ const Hero = () => {
           uma sexta-feira de cada vez.
         </h1>
         <p className="px-4 md:text-lg">
-          Subscribe to effortless, top-tier Bitcoin blogs tailored for your financial needs.
+          Assine conteúdos de Bitcoin simples e de alto nível, feitos sob medida para suas necessidades financeiras.
         </p>
       </div>
       <div className="w-[90%] md:w-[65%] flex justify-center">
