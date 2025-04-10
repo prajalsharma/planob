@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import Partner from "../assets/partner.png";
 import PartnerCertificate from "../assets/certificate.png";
+import Profile from "../assets/pfp.jpg";
+import X from "../assets/x-dark.svg";
+import Linkedin from "../assets/linkedin.svg";
 
 const Landing = () => {
   return (
@@ -43,6 +46,7 @@ const Landing = () => {
       <ThirdSection />
       <SecondSection />
       <FourthSection />
+      <SixthSection />
       <FifthSection />
     </>
   );
@@ -248,6 +252,53 @@ const FifthSection = () => {
       <div
         className="calendly-inline-widget h-[62.5rem] lg:h-[680px]"
         data-url="https://calendly.com/prajalsharma1120/meet-with-prajal?hide_gdpr_banner=1"></div>
+    </section>
+  );
+};
+
+const SixthSection = () => {
+  return (
+    <section className="sixth py-20 bg-white text-center px-4">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">Why I Built Plano B</h2>
+
+        <div className="flex justify-center mb-6">
+          <img
+            src={Profile}
+            alt="Rodrigo Carraresi"
+            className="rounded-full w-40 h-40 object-cover"
+          />
+        </div>
+
+        <h3 className="text-xl font-semibold text-[#21409a]">Rodrigo Carraresi</h3>
+        <p className="text-gray-700 mt-1 mb-4">
+          Currently DevRel Leader at Thesis/Mezo and
+          <br />
+          Previously Head of DevRel at Ledger
+        </p>
+
+        <p className="text-gray-600 mb-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua.
+        </p>
+
+        <div className="flex justify-center gap-6 text-xl">
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
+            <img src={X} alt="" className="size-9" />
+          </a>
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
+            <img src={Linkedin} alt="" className="size-9" />
+          </a>
+        </div>
+      </div>
     </section>
   );
 };

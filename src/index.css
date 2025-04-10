@@ -42,6 +42,10 @@ body {
   background-image: linear-gradient(to bottom left, #f0f4ff 50%, #d9e3ff 75%, #c5d6ff 100%);
 }
 
+.sixth {
+  background-image: linear-gradient(to top right, #f0f4ff 50%, #d9e3ff 75%, #c5d6ff 100%);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
