@@ -99,13 +99,7 @@ export default function BlogList() {
             <p className="text-sm text-muted-foreground my-2">
               Inscreva-se na newsletter para receber todas as atualizações.
             </p>
-            <iframe
-              src="https://embeds.beehiiv.com/e36d6976-5e62-426d-a96e-7ae21bf1e1b1?slim=true"
-              data-test-id="beehiiv-embed"
-              frameBorder="0"
-              scrolling="no"
-              style={{ margin: 0, borderRadius: "0px", backgroundColor: "transparent" }}
-              className="w-full h-14"></iframe>
+            <iframe src="https://embeds.beehiiv.com/09dd87db-dd35-4482-897d-1a30c52ec426?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
           </div>
         </div>
       </aside>
