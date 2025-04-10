@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Languages } from "lucide-react";
 import {
   DropdownMenu,
@@ -6,11 +6,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+
 import China from "../assets/flags/china.svg";
 import Spain from "../assets/flags/spain.svg";
 import India from "../assets/flags/india.svg";
 import Japan from "../assets/flags/japan.svg";
 import USA from "../assets/flags/usa.svg";
+import Brazil from "../assets/flags/brazil.svg";
 
 const languages = [
   {
@@ -43,10 +45,31 @@ const languages = [
     country: "JP",
     flag: Japan,
   },
+  {
+    name: "Portuguese",
+    code: "pt-BR", // Brazilian Portuguese
+    country: "BR",
+    flag: Brazil,
+  },
 ];
 
 const LanguageSelector = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState();
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
+
+  useEffect(() => {
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    const matchedLanguage = languages.find((lang) =>
+      browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
+    );
+
+    if (matchedLanguage) {
+      setSelectedLanguage(matchedLanguage);
+    } else {
+      const defaultLang = languages.find((lang) => lang.code === "pt-BR");
+      setSelectedLanguage(defaultLang);
+    }
+  }, []);
 
   const handleLanguageChange = (language) => {
     if (selectedLanguage === language) {
@@ -70,14 +93,20 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageChange(language)}
             className={`group my-1 justify-between ${
               selectedLanguage === language ? "bg-primary-blue text-white" : ""
-            }`}>
+            }`}
+          >
             <div>
-              <img src={language.flag} alt="" className="size-6 inline-block mr-2 rounded-sm" />
+              <img
+                src={language.flag}
+                alt={language.name}
+                className="size-6 inline-block mr-2 rounded-sm"
+              />
               {language.name}
             </div>
             <span
               className={`group-hover:text-white text-xs text-muted-foreground 
-              ${selectedLanguage === language ? "text-white" : ""}`}>
+              ${selectedLanguage === language ? "text-white" : ""}`}
+            >
               {language.country}
             </span>
           </DropdownMenuItem>
@@ -86,4 +115,5 @@ const LanguageSelector = () => {
     </DropdownMenu>
   );
 };
+
 export default LanguageSelector;
