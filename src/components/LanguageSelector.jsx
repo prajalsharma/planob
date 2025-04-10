@@ -20,7 +20,8 @@ const languages = [
     code: "pt-BR", // Brazilian Portuguese
     country: "BR",
     flag: Brazil,
-  },{
+  },
+  {
     name: "English",
     code: "en",
     country: "US",
@@ -50,29 +51,23 @@ const languages = [
     country: "JP",
     flag: Japan,
   },
-  
 ];
 
 const LanguageSelector = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const defaultLang = languages.find((lang) => lang.code === "pt-BR");
+  const [selectedLanguage, setSelectedLanguage] = useState(defaultLang);
 
   useEffect(() => {
     const browserLang = navigator.language || navigator.userLanguage;
 
-    const defaultLang = languages.find((lang) => lang.code === "pt-BR");
-const [selectedLanguage, setSelectedLanguage] = useState(defaultLang);
+    const matchedLanguage = languages.find((lang) =>
+      browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
+    );
 
-useEffect(() => {
-  const browserLang = navigator.language || navigator.userLanguage;
-
-  const matchedLanguage = languages.find((lang) =>
-    browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
-  );
-
-  if (matchedLanguage) {
-    setSelectedLanguage(matchedLanguage);
-  }
-}, []);
+    if (matchedLanguage) {
+      setSelectedLanguage(matchedLanguage);
+    }
+  }, []);
 
   const handleLanguageChange = (language) => {
     if (selectedLanguage === language) {
