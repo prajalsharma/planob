@@ -12,12 +12,13 @@ const Hero = () => {
       </div>
       <div className="w-[90%] md:w-[65%] flex justify-center">
         <iframe
-          src="https://embeds.beehiiv.com/e36d6976-5e62-426d-a96e-7ae21bf1e1b1?slim=true"
+          src="https://embeds.beehiiv.com/09dd87db-dd35-4482-897d-1a30c52ec426?slim=true"
           data-test-id="beehiiv-embed"
           frameBorder="0"
           scrolling="no"
           style={{ margin: 0, borderRadius: "0px", backgroundColor: "transparent" }}
           className="w-full"></iframe>
+        
       </div>
     </section>
   );
