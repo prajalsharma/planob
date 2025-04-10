@@ -17,74 +17,55 @@ import Brazil from "../assets/flags/brazil.svg";
 const languages = [
   {
     name: "Portuguese",
-    code: "pt-BR",
-    googleCode: "pt",
+    code: "pt",
     country: "BR",
     flag: Brazil,
   },
   {
     name: "English",
     code: "en",
-    googleCode: "en",
     country: "US",
     flag: USA,
   },
   {
     name: "Spanish",
     code: "es",
-    googleCode: "es",
     country: "ES",
     flag: Spain,
   },
   {
     name: "Hindi",
     code: "hi",
-    googleCode: "hi",
     country: "IN",
     flag: India,
   },
   {
     name: "Chinese",
-    code: "zh",
-    googleCode: "zh-CN",
+    code: "zh-CN",
     country: "CN",
     flag: China,
   },
   {
     name: "Japanese",
     code: "ja",
-    googleCode: "ja",
     country: "JP",
     flag: Japan,
   },
 ];
 
 const LanguageSelector = () => {
-  const defaultLang = languages.find((lang) => lang.code === "pt-BR");
-  const [selectedLanguage, setSelectedLanguage] = useState(defaultLang);
-
-  useEffect(() => {
-    const browserLang = navigator.language || navigator.userLanguage;
-    const matchedLanguage = languages.find((lang) =>
-      browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
-    );
-    if (matchedLanguage) {
-      setSelectedLanguage(matchedLanguage);
-    }
-  }, []);
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
 
-    // Trigger Google Translate dropdown value
-    const langCode = language.googleCode;
+    // Try to trigger the Google Translate dropdown
     const selectEl = document.querySelector(".goog-te-combo");
-
     if (selectEl) {
-      selectEl.value = langCode;
+      selectEl.value = language.code;
       selectEl.dispatchEvent(new Event("change"));
     } else {
-      console.warn("Google Translate combo not loaded yet.");
+      console.warn("Google Translate dropdown not found in DOM.");
     }
   };
 
@@ -101,7 +82,9 @@ const LanguageSelector = () => {
             key={index}
             onClick={() => handleLanguageChange(language)}
             className={`group my-1 justify-between ${
-              selectedLanguage === language ? "bg-primary-blue text-white" : ""
+              selectedLanguage.code === language.code
+                ? "bg-primary-blue text-white"
+                : ""
             }`}
           >
             <div>
@@ -114,7 +97,7 @@ const LanguageSelector = () => {
             </div>
             <span
               className={`group-hover:text-white text-xs text-muted-foreground ${
-                selectedLanguage === language ? "text-white" : ""
+                selectedLanguage.code === language.code ? "text-white" : ""
               }`}
             >
               {language.country}
