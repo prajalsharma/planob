@@ -31,7 +31,7 @@ const Landing = () => {
           <p className="text-lg text-gray-600 mb-10">
             Da educação ao planejamento de herança:
             <br />
-            sua jornada com Bitcoin começa aqui.
+            sua jornada com Bitcoin começa aqui.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
               Saber Más
