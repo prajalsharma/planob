@@ -28,7 +28,7 @@ export default function Footer() {
       className="hover:underline"
     >
       LinkedIn
-    </a>
+    </a></li>
             </ul>
           </div>
           
