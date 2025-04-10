@@ -33,7 +33,7 @@ export default function BlogList() {
     <div className="blog-page-wrapper">
       <div className="blog-main">
         <div className="flex items-center gap-4">
-          <h2 className="blog-section-title shrink-0">Latest articles from plan B</h2>
+          <h2 className="blog-section-title shrink-0">Últimos artigos do plano B</h2>
           <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-6" />
         </div>
 
@@ -58,7 +58,7 @@ export default function BlogList() {
           </div>
         ) : (
           <p style={{ marginTop: "2rem", color: "#90a0cd" }}>
-            No blogs found. Please try again later.
+            Nenhum blog encontrado. Por favor, tente novamente mais tarde.
           </p>
         )}
 
@@ -97,7 +97,7 @@ export default function BlogList() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h4>
             <p className="text-sm text-muted-foreground my-2">
-              Subscribe to the newsletter for all the latest updates.
+              Inscreva-se na newsletter para receber todas as atualizações.
             </p>
             <iframe
               src="https://embeds.beehiiv.com/e36d6976-5e62-426d-a96e-7ae21bf1e1b1?slim=true"
