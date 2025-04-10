@@ -62,7 +62,7 @@ const SecondSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-[#1A2B50] mb-12 flex items-center justify-center gap-2">
-          O que o Plano B Oferece{" "}
+          O que o plano B Oferece{" "}
           <span className="inline-block">
             <LifeBuoy size={36} />
           </span>
@@ -152,7 +152,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center gap-2">
-         Por que escolher o Plano B
+         Por que escolher o plano B
           <Target size={36} className="text-white" />
         </motion.h2>
 
@@ -178,7 +178,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-base md:text-lg text-white/90 text-center">
-          Com o Plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a proteção do seu patrimônio digital no presente e no futuro.
+          Com o plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a proteção do seu patrimônio digital no presente e no futuro.
         </motion.p>
       </div>
     </section>
