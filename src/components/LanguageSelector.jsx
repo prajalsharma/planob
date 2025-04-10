@@ -16,6 +16,11 @@ import Brazil from "../assets/flags/brazil.svg";
 
 const languages = [
   {
+    name: "Portuguese",
+    code: "pt-BR", // Brazilian Portuguese
+    country: "BR",
+    flag: Brazil,
+  },{
     name: "English",
     code: "en",
     country: "US",
@@ -45,12 +50,7 @@ const languages = [
     country: "JP",
     flag: Japan,
   },
-  {
-    name: "Portuguese",
-    code: "pt-BR", // Brazilian Portuguese
-    country: "BR",
-    flag: Brazil,
-  },
+  
 ];
 
 const LanguageSelector = () => {
