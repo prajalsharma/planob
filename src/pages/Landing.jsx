@@ -26,13 +26,12 @@ const Landing = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1A2B50] mb-6 leading-tight">
-            Soluciones Simples <br className="hidden md:block" /> y Seguras de Bitcoin
+            Soluções Simples <br className="hidden md:block" /> e Seguras com Bitcoin
           </h1>
           <p className="text-lg text-gray-600 mb-10">
-            De educación a planificación de herencias:
+            Da educação ao planejamento de herança:
             <br />
-            tu viaje en Bitcoin comienza aquí.
-          </p>
+            sua jornada com Bitcoin começa aqui.
           <div className="flex justify-center gap-4 flex-wrap">
             <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
               Saber Más
@@ -63,7 +62,7 @@ const SecondSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-[#1A2B50] mb-12 flex items-center justify-center gap-2">
-          Qué Ofrece Plano B{" "}
+          O que o Plano B Oferece{" "}
           <span className="inline-block">
             <LifeBuoy size={36} />
           </span>
@@ -79,9 +78,9 @@ const SecondSection = () => {
               <BookOpenCheck size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Educación <br /> de Bitcoin
+              Educação <br /> em Bitcoin
             </h3>
-            <p className="text-gray-600 mb-4">Hacemos que Bitcoin sea fácil de entender</p>
+            <p className="text-gray-600 mb-4">Tornamos o Bitcoin fácil de entender</p>
             <a href="/">
               <button className="bgbg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
                 Explorar
@@ -99,14 +98,14 @@ const SecondSection = () => {
               <ShieldCheck size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Consultoría <br /> de Seguridad
+              Consultoria<br /> em Segurança
             </h3>
             <p className="text-gray-600 mb-4">
-              Aprende las mejores prácticas para almacenar Bitcoin de forma segura
+              Aprenda as melhores práticas para armazenar seu Bitcoin com segurança
             </p>
             <a href="/">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
-                Saber Más
+                Saiba Mais
               </button>
             </a>
           </motion.div>
@@ -121,9 +120,9 @@ const SecondSection = () => {
               <KeyRound size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Herencias y <br /> Recuperación
+             Heranças e <br /> Recuperação
             </h3>
-            <p className="text-gray-600 mb-4">Protege tu futuro con soluciones confiables</p>
+            <p className="text-gray-600 mb-4">Proteja seu futuro com soluções confiáveis</p>
             <a href="/">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
                 Contáctanos
@@ -138,10 +137,10 @@ const SecondSection = () => {
 
 const ThirdSection = () => {
   const points = [
-    " Simple and straightforward language",
-    " Exclusive focus on Bitcoin",
-    " Practical solutions for security and financial planning",
-    " Customized support for your needs",
+    " Linguagem simples e direta",
+    " Foco exclusivo em Bitcoin",
+    " Soluções práticas para segurança e planejamento financeiro",
+    " Suporte personalizado para suas necessidades",
   ];
 
   return (
@@ -153,7 +152,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center gap-2">
-          Why Choose Plan B
+         Por que escolher o Plano B
           <Target size={36} className="text-white" />
         </motion.h2>
 
@@ -179,8 +178,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-base md:text-lg text-white/90 text-center">
-          With Plan B, you learn how to use Bitcoin safely and efficiently, ensuring the protection
-          of your digital asset for the present and the future.
+          Com o Plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a proteção do seu patrimônio digital no presente e no futuro.
         </motion.p>
       </div>
     </section>
@@ -197,7 +195,7 @@ const FourthSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-white mb-8">
-          Our Partners
+          Nossos Parceiros
         </motion.h2>
 
         <motion.a
@@ -260,7 +258,7 @@ const SixthSection = () => {
   return (
     <section className="sixth py-20 bg-white text-center px-4">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">Why I Built Plano B</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">Por que Criei o plano B</h2>
 
         <div className="flex justify-center mb-6">
           <img
@@ -284,14 +282,14 @@ const SixthSection = () => {
 
         <div className="flex justify-center gap-6 text-xl">
           <a
-            href="https://twitter.com/"
+            href="https://x.com/carraresi"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
             <img src={X} alt="" className="size-9" />
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://es.linkedin.com/in/rodrigocarraresi"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary-blue p-2 rounded-xl transition hover:opacity-55">
