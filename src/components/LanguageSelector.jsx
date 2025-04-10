@@ -17,37 +17,43 @@ import Brazil from "../assets/flags/brazil.svg";
 const languages = [
   {
     name: "Portuguese",
-    code: "pt-BR", // Brazilian Portuguese
+    code: "pt-BR",
+    googleCode: "pt",
     country: "BR",
     flag: Brazil,
   },
   {
     name: "English",
     code: "en",
+    googleCode: "en",
     country: "US",
     flag: USA,
   },
   {
     name: "Spanish",
     code: "es",
+    googleCode: "es",
     country: "ES",
     flag: Spain,
   },
   {
     name: "Hindi",
     code: "hi",
+    googleCode: "hi",
     country: "IN",
     flag: India,
   },
   {
     name: "Chinese",
     code: "zh",
+    googleCode: "zh-CN",
     country: "CN",
     flag: China,
   },
   {
     name: "Japanese",
     code: "ja",
+    googleCode: "ja",
     country: "JP",
     flag: Japan,
   },
@@ -70,65 +76,53 @@ const LanguageSelector = () => {
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
 
-    const googleLangCodeMap = {
-      "pt-BR": "pt",
-      en: "en",
-      es: "es",
-      hi: "hi",
-      zh: "zh-CN",
-      ja: "ja",
-    };
-
-    const langCode = googleLangCodeMap[language.code];
+    // Trigger Google Translate dropdown value
+    const langCode = language.googleCode;
     const selectEl = document.querySelector(".goog-te-combo");
+
     if (selectEl) {
       selectEl.value = langCode;
       selectEl.dispatchEvent(new Event("change"));
+    } else {
+      console.warn("Google Translate combo not loaded yet.");
     }
   };
 
   return (
-    <>
-      {/* Google Translate Element */}
-      <div id="google_translate_element" style={{ display: "none" }}></div>
-
-      {/* Language Dropdown */}
-      <DropdownMenu>
-        <DropdownMenuTrigger>
-          <div className="group border-1 rounded px-2.5 py-1 hover:bg-primary-blue hover:text-white transition-colors md:mr-0">
-            <Languages className="size-6" />
-          </div>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="min-w-50 mr-3">
-          {languages.map((language, index) => (
-            <DropdownMenuItem
-              key={index}
-              onClick={() => handleLanguageChange(language)}
-              className={`group my-1 justify-between ${
-                selectedLanguage === language
-                  ? "bg-primary-blue text-white"
-                  : ""
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <div className="group border-1 rounded px-2.5 py-1 hover:bg-primary-blue hover:text-white transition-colors md:mr-0">
+          <Languages className="size-6" />
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-50 mr-3">
+        {languages.map((language, index) => (
+          <DropdownMenuItem
+            key={index}
+            onClick={() => handleLanguageChange(language)}
+            className={`group my-1 justify-between ${
+              selectedLanguage === language ? "bg-primary-blue text-white" : ""
+            }`}
+          >
+            <div>
+              <img
+                src={language.flag}
+                alt={language.name}
+                className="size-6 inline-block mr-2 rounded-sm"
+              />
+              {language.name}
+            </div>
+            <span
+              className={`group-hover:text-white text-xs text-muted-foreground ${
+                selectedLanguage === language ? "text-white" : ""
               }`}
             >
-              <div>
-                <img
-                  src={language.flag}
-                  alt={language.name}
-                  className="size-6 inline-block mr-2 rounded-sm"
-                />
-                {language.name}
-              </div>
-              <span
-                className={`group-hover:text-white text-xs text-muted-foreground 
-                ${selectedLanguage === language ? "text-white" : ""}`}
-              >
-                {language.country}
-              </span>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </>
+              {language.country}
+            </span>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
