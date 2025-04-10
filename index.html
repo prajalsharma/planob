@@ -13,10 +13,10 @@
   <body>
     <div id="root"></div>
 
-    <!-- Google Translate widget anchor (hidden) -->
+    <!-- Google Translate widget anchor -->
     <div id="google_translate_element" style="display: none;"></div>
 
-    <!-- Google Translate initialization script -->
+    <!-- Google Translate init function -->
     <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
@@ -30,14 +30,13 @@
       }
     </script>
 
-    <!-- Google Translate widget script -->
+    <!-- Google Translate widget loader -->
     <script
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-      async
       defer
     ></script>
 
-    <!-- Your React app entry file -->
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- Vite app entry point -->
+    <script type="module" src="/src/utils/main.jsx"></script>
   </body>
 </html>
