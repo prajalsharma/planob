@@ -122,7 +122,7 @@ const SecondSection = () => {
               Heranças e <br /> Recuperação
             </h3>
             <p className="text-gray-600 mb-4">Proteja seu futuro com soluções confiáveis</p>
-            <a href="/">
+            <a href="#contact">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
                 Contáctanos
               </button>
@@ -239,7 +239,7 @@ const FifthSection = () => {
   }, []);
 
   return (
-    <section className="fifth py-16 px-4">
+    <section id="contact" className="fifth py-16 px-4">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

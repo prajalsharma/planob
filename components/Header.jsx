@@ -7,10 +7,11 @@ import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { MenuToggle } from "./MenuToggle";
+import { useRouter } from "next/navigation";
 
 const links = [
   { name: "Blogs", url: "/blogs" },
-  { name: "Fale conosco", url: "#contato" },
+  { name: "Fale conosco", url: "#contact" },
 ];
 
 const sidebarVariants = {
@@ -62,6 +63,7 @@ const itemVariants = {
 const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const largeScreen = useMediaQuery("(min-width: 768px)");
+  const router = useRouter();
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -77,6 +79,14 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleContact = (link) => {
+    if (link.url === "#contact") {
+      router.push("/#contact");
+    } else {
+      router.push(link.url);
+    }
+  };
 
   return (
     <header
@@ -109,11 +119,11 @@ const Header = () => {
           <ul className="font-medium gap-8 text-lg flex mr-40">
             {links.map((link, index) => (
               <li key={index}>
-                <Link
-                  href={link.url}
+                <button
+                  onClick={() => handleContact(link)}
                   className="hover:text-primary-blue transition-colors relative link-underline">
                   {link.name}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
@@ -133,9 +143,14 @@ const Header = () => {
               <motion.ul variants={listVariants} className="absolute -left-34 w-full h-full top-11">
                 {links.map((link, index) => (
                   <motion.li variants={itemVariants} key={index} className="py-4">
-                    <Link href={link.url} className="text-white" onClick={() => toggleOpen()}>
+                    <button
+                      onClick={() => {
+                        handleContact(link);
+                        toggleOpen();
+                      }}
+                      className="text-white w-full">
                       {link.name}
-                    </Link>
+                    </button>
                   </motion.li>
                 ))}
               </motion.ul>
