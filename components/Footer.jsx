@@ -46,7 +46,7 @@ export default function Footer() {
           <h5 className="font-semibold mb-2">
             Assine nossa newsletter para receber novidades direto no seu e-mail
           </h5>
-          <div className="w-1/2 md:w-full">
+          <div className="md:w-full">
             <iframe
               src="https://embeds.beehiiv.com/c292b3d3-226e-4ab1-8df4-b0bf4705ea97?slim=true"
               data-test-id="beehiiv-embed"
