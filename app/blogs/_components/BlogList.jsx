@@ -4,6 +4,7 @@ import BlogCard from "./BlogCard";
 import { fetchBeehiivRSS } from "@/utils/fetchBeehiivRSS";
 import "./BlogList.css";
 import { RefreshCcw } from "lucide-react";
+import { useBlogContext } from "@/context/BlogContext";
 
 // ✅ Manually define slugs for pinned posts
 const PINNED_SLUGS = [
@@ -16,13 +17,15 @@ export default function BlogList() {
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
+  const { contexBlog, contextLoading } = useBlogContext();
 
   useEffect(() => {
-    fetchBeehiivRSS()
-      .then((data) => setBlogs(data))
-      .catch((error) => console.error("[BlogList] Failed to fetch blogs:", error))
-      .finally(() => setIsLoading(false));
-  }, []);
+    if (contexBlog && contexBlog.length > 0) {
+      setBlogs(contexBlog);
+      setIsLoading(false);
+      console.log("context blog in blog", contexBlog);
+    }
+  }, [contexBlog]);
 
   // ✅ Show all blogs in main list
   const mainBlogs = showAll ? blogs : blogs.slice(0, 6);
@@ -34,7 +37,9 @@ export default function BlogList() {
     <div className="blog-page-wrapper">
       <div className="blog-main">
         <div className="flex items-center gap-4">
-          <h2 className="blog-section-title shrink-0">Últimos artigos do plano B</h2>
+          <h2 className="blog-section-title shrink-0">
+            Últimos artigos do plano B
+          </h2>
           <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-6" />
         </div>
 
@@ -67,7 +72,8 @@ export default function BlogList() {
           <div className="flex justify-center mt-8 mb-6">
             <button
               className="flex items-center gap-1.5 bg-primary-blue text-white px-4 py-2 rounded-md hover:bg-primary-blue/80 transition group"
-              onClick={() => setShowAll(true)}>
+              onClick={() => setShowAll(true)}
+            >
               Carregar Mais
               <RefreshCcw
                 size={20}
@@ -94,7 +100,9 @@ export default function BlogList() {
             <span className="w-[95%] h-[0.1px] bg-[#e2e2e2] mb-2" />
           </div>
           <div className="bg-[#f6f6f6] p-4 rounded-lg">
-            <h4 className="font-bold text-lg">Assine e aprenda a usar Bitcoin com confiança.</h4>
+            <h4 className="font-bold text-lg">
+              Assine e aprenda a usar Bitcoin com confiança.
+            </h4>
             <p className="text-sm text-muted-foreground my-2">
               Inscreva-se na newsletter para receber todas as atualizações.
             </p>
@@ -108,7 +116,8 @@ export default function BlogList() {
                 borderRadius: "0px !important",
                 backgroundColor: "transparent",
               }}
-              className="w-full h-14"></iframe>
+              className="w-full h-14"
+            ></iframe>
           </div>
         </div>
       </aside>
