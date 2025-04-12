@@ -253,7 +253,7 @@ const FifthSection = () => {
       </div>
       <div
         className="calendly-inline-widget h-[62.5rem] lg:h-[680px]"
-        data-url="https://calendly.com/prajalsharma1120/meet-with-prajal?hide_gdpr_banner=1"></div>
+        data-url="https://calendly.com/carraresi/plano-b-start?hide_gdpr_banner=1"></div>
     </section>
   );
 };
