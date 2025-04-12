@@ -31,7 +31,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="https://www.linkedin.com/company/plano-b?utm_source=www.planob.club&utm_medium=referral"
+                href="https://www.linkedin.com/company/bitcoin-planob/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline">
