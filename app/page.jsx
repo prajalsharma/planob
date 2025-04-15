@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from 'next/link';
 import {
   BookOpenCheck,
   Calendar,
@@ -31,13 +32,13 @@ export default function Home() {
             <br />
             sua jornada com Bitcoin começa aqui.
           </p>
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-4 flex-wrap"> <Link href="/blogs">
             <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
               Saber Más
-            </button>
-            <button className="bg-white text-[#1A2B50] border border-gray-300 hover:bg-gray-100 px-6 py-3 text-base font-medium rounded-md shadow transition-all">
+               </button></Link>
+               <a href="#contact"><button className="bg-white text-[#1A2B50] border border-gray-300 hover:bg-gray-100 px-6 py-3 text-base font-medium rounded-md shadow transition-all">
               Contáctanos
-            </button>
+            </button></a>
           </div>
         </motion.div>
       </section>
@@ -79,7 +80,7 @@ const SecondSection = () => {
               Educação <br /> em Bitcoin
             </h3>
             <p className="text-gray-600 mb-4">Tornamos o Bitcoin fácil de entender</p>
-            <a href="/">
+            <a href="/blogs">
               <button className="bgbg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
                 Explorar
               </button>
@@ -102,7 +103,7 @@ const SecondSection = () => {
             <p className="text-gray-600 mb-4">
               Aprenda as melhores práticas para armazenar seu Bitcoin com segurança
             </p>
-            <a href="/">
+            <a href="#aboutus">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
                 Saiba Mais
               </button>
@@ -260,7 +261,7 @@ const FifthSection = () => {
 
 const SixthSection = () => {
   return (
-    <section className="sixth py-20 bg-white text-center px-4">
+    <section id="aboutus" className="sixth py-20 bg-white text-center px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">
           Por que Criei o plano B
