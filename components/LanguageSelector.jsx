@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 const languages = [
   {
@@ -22,51 +23,36 @@ const languages = [
     country: "US",
     flag: "/assets/flags/usa.svg",
   },
-  {
-    name: "Spanish",
-    code: "es",
-    country: "ES",
-    flag: "/assets/flags/spain.svg",
-  },
-  {
-    name: "Hindi",
-    code: "hi",
-    country: "IN",
-    flag: "/assets/flags/india.svg",
-  },
-  {
-    name: "Chinese",
-    code: "zh-CN",
-    country: "CN",
-    flag: "/assets/flags/china.svg",
-  },
-  {
-    name: "Japanese",
-    code: "ja",
-    country: "JP",
-    flag: "/assets/flags/japan.svg",
-  },
 ];
 
 const LanguageSelector = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const router = useRouter();
 
   const handleLanguageChange = (lang) => {
-    setSelectedLanguage(lang);
+    if (lang.code === "en") {
+      router.push("/en");
+      setSelectedLanguage(lang);
+    } else if (lang.code === "pt") {
+      router.push("/");
+      setSelectedLanguage(lang);
+    } else {
+      setSelectedLanguage(lang);
 
-    const fromLang = "pt"; // original language of your content
-    const toLang = lang.code;
+      const fromLang = "pt"; // original language of your content
+      const toLang = lang.code;
 
-    // If same language, stay on current page
-    if (toLang === fromLang) return;
+      // If same language, stay on current page
+      if (toLang === fromLang) return;
 
-    const currentUrl = window.location.href;
+      const currentUrl = window.location.href;
 
-    // Open translated version in new tab
-    const translateUrl = `https://translate.google.com/translate?hl=${toLang}&sl=${fromLang}&u=${encodeURIComponent(
-      currentUrl
-    )}`;
-    window.open(translateUrl, "_blank");
+      // Open translated version in new tab
+      const translateUrl = `https://translate.google.com/translate?hl=${toLang}&sl=${fromLang}&u=${encodeURIComponent(
+        currentUrl
+      )}`;
+      window.open(translateUrl, "_blank");
+    }
   };
 
   return (

@@ -7,12 +7,7 @@ import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { MenuToggle } from "./MenuToggle";
-import { useRouter } from "next/navigation";
-
-const links = [
-  { name: "Blogs", url: "/blogs" },
-  { name: "Fale conosco", url: "#contact" },
-];
+import { usePathname, useRouter } from "next/navigation";
 
 const sidebarVariants = {
   open: (height = 1000) => ({
@@ -64,8 +59,16 @@ const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const largeScreen = useMediaQuery("(min-width: 768px)");
   const router = useRouter();
+  const pathname = usePathname();
 
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const isEnglish = pathname.includes("/en");
+
+  const links = [
+    { name: isEnglish ? "Blogs" : "Blogs", url: "/blogs" },
+    { name: isEnglish ? "Contact Us" : "Fale conosco", url: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
