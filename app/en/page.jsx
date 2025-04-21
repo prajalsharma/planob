@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import {
   BookOpenCheck,
   Calendar,
@@ -25,20 +25,26 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1A2B50] mb-6 leading-tight">
-            Bitcoin Solutions<br className="hidden md:block" /> made Simple
+            Bitcoin Solutions
+            <br className="hidden md:block" /> made Simple
           </h1>
           <p className="text-lg text-gray-600 mb-10">
             Da educação ao planejamento de herança:
             <br />
             sua jornada com Bitcoin começa aqui.
           </p>
-          <div className="flex justify-center gap-4 flex-wrap"> <Link href="/blogs">
-            <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
-              Saber Más
-               </button></Link>
-               <a href="#contact"><button className="bg-white text-[#1A2B50] border border-gray-300 hover:bg-gray-100 px-6 py-3 text-base font-medium rounded-md shadow transition-all">
-              Contáctanos
-            </button></a>
+          <div className="flex justify-center gap-4 flex-wrap">
+            {" "}
+            <Link href="/blogs">
+              <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
+                Saber Más
+              </button>
+            </Link>
+            <a href="#contact">
+              <button className="bg-white text-[#1A2B50] border border-gray-300 hover:bg-gray-100 px-6 py-3 text-base font-medium rounded-md shadow transition-all">
+                Contáctanos
+              </button>
+            </a>
           </div>
         </motion.div>
       </section>
