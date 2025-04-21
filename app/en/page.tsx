@@ -25,7 +25,7 @@ export default function Home() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-[#1A2B50] mb-6 leading-tight">
-            Soluções Simples <br className="hidden md:block" /> e Seguras com Bitcoin
+            Bitcoin Solutions<br className="hidden md:block" /> made Simple
           </h1>
           <p className="text-lg text-gray-600 mb-10">
             Da educação ao planejamento de herança:
