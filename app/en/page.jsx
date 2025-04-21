@@ -29,20 +29,20 @@ export default function Home() {
             <br className="hidden md:block" /> made Simple
           </h1>
           <p className="text-lg text-gray-600 mb-10">
-            Da educação ao planejamento de herança:
+            From education to inheritance planning:
             <br />
-            sua jornada com Bitcoin começa aqui.
+            Your journey with Bitcoin starts here.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             {" "}
             <Link href="/blogs">
               <button className="bg-primary-blue hover:opacity-50 text-white px-6 py-3 text-base font-medium rounded-md shadow transition-all">
-                Saber Más
+                Know More
               </button>
             </Link>
             <a href="#contact">
               <button className="bg-white text-[#1A2B50] border border-gray-300 hover:bg-gray-100 px-6 py-3 text-base font-medium rounded-md shadow transition-all">
-                Contáctanos
+                Contact Us
               </button>
             </a>
           </div>
@@ -67,7 +67,7 @@ const SecondSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-[#1A2B50] mb-12 flex items-center justify-center gap-2">
-          O que o plano B Oferece{" "}
+          What Plan B offers{" "}
           <span className="inline-block">
             <LifeBuoy size={36} />
           </span>
@@ -83,12 +83,13 @@ const SecondSection = () => {
               <BookOpenCheck size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Educação <br /> em Bitcoin
+              Education <br /> in Bitcoin
             </h3>
-            <p className="text-gray-600 mb-4">Tornamos o Bitcoin fácil de entender</p>
+            <p className="text-gray-600 mb-4">
+We make Bitcoin easy to understand</p>
             <a href="/blogs">
               <button className="bgbg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
-                Explorar
+                Explore
               </button>
             </a>
           </motion.div>
@@ -103,15 +104,16 @@ const SecondSection = () => {
               <ShieldCheck size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Consultoria
-              <br /> em Segurança
+              Consultancy
+
+              <br /> in Security
             </h3>
             <p className="text-gray-600 mb-4">
-              Aprenda as melhores práticas para armazenar seu Bitcoin com segurança
+              Learn best practices for storing your Bitcoin securely
             </p>
             <a href="#aboutus">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
-                Saiba Mais
+                Learn More
               </button>
             </a>
           </motion.div>
@@ -126,12 +128,13 @@ const SecondSection = () => {
               <KeyRound size={36} />
             </div>
             <h3 className="text-xl font-semibold text-[#1A2B50] mb-2">
-              Heranças e <br /> Recuperação
+             Inheritances and
+ <br /> Recovery
             </h3>
-            <p className="text-gray-600 mb-4">Proteja seu futuro com soluções confiáveis</p>
+            <p className="text-gray-600 mb-4">Protect your future with reliable solutions</p>
             <a href="#contact">
               <button className="bg-white hover:bg-primary-blue border-2 border-primary-blue text-primary-blue hover:text-white px-5 py-2 rounded-md transition-all">
-                Contáctanos
+                Contact Us
               </button>
             </a>
           </motion.div>
@@ -143,10 +146,10 @@ const SecondSection = () => {
 
 const ThirdSection = () => {
   const points = [
-    " Linguagem simples e direta",
-    " Foco exclusivo em Bitcoin",
-    " Soluções práticas para segurança e planejamento financeiro",
-    " Suporte personalizado para suas necessidades",
+    " Simple and straightforward language",
+    " Exclusive focus on Bitcoin",
+    " Practical solutions for security and financial planning",
+    " Customized support for your needs",
   ];
 
   return (
@@ -158,7 +161,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-8 flex items-center justify-center gap-2">
-          Por que escolher o plano B
+          Why choose plano B
           <Target size={36} className="text-white" />
         </motion.h2>
 
@@ -184,8 +187,7 @@ const ThirdSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           className="text-base md:text-lg text-white/90 text-center">
-          Com o plano B, você aprende a usar o Bitcoin com segurança e eficiência, garantindo a
-          proteção do seu patrimônio digital no presente e no futuro.
+          With plano B, you learn how to use Bitcoin safely and efficiently, ensuring the protection of your digital asset now and in the future.
         </motion.p>
       </div>
     </section>
@@ -202,7 +204,7 @@ const FourthSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-white mb-8">
-          Nossos Parceiros
+         Our Partners
         </motion.h2>
 
         <motion.a
@@ -255,7 +257,7 @@ const FifthSection = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold mb-3 text-[#1A2B50] flex items-center justify-center gap-2">
           <Calendar size={36} />
-          Agendar uma Reunião
+          Schedule a Meeting
         </motion.h2>
       </div>
       <div
@@ -270,7 +272,7 @@ const SixthSection = () => {
     <section id="aboutus" className="sixth py-20 bg-white text-center px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[#21409a] mb-10">
-          Por que Criei o plano B
+          Why I created plano B
         </h2>
 
         <div className="flex justify-center mb-6">
