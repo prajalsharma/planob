@@ -293,7 +293,7 @@ const SixthSection = () => {
         </p>
 
         <p className="text-gray-600 mb-6">
-          After years of helping friends and people around me understand Bitcoin in a practical way, I felt it was time to make that work official. That’s how Plano B was born: an independent consultancy for anyone who wants to learn about Bitcoin in a simple, secure way without complicated jargon. The idea came from my desire to share knowledge with those who want to protect themselves financially but feel overwhelmed by too much technical or confusing information.
+          After years of helping friends and people around me understand Bitcoin in a practical way, I felt it was time to make that work official. That’s how plano B was born: an independent consultancy for anyone who wants to learn about Bitcoin in a simple, secure way without complicated jargon. The idea came from my desire to share knowledge with those who want to protect themselves financially but feel overwhelmed by too much technical or confusing information.
 
 <br />
            <br />As a “Bitcoin Concierge” (yes, it’s a real title and no, I don’t wear a bow tie 🎩), my goal is to make Bitcoin accessible to everyone, regardless of their technical background. I also launched a free newsletter that delivers straightforward, no-fluff content.
