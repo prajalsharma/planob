@@ -285,10 +285,10 @@ const SixthSection = () => {
         </p>
 
         <p className="text-gray-600 mb-6">
-          Depois de anos ajudando amigos e conhecidos a entender o Bitcoin de forma prática, senti que era hora de oficializar esse trabalho. Foi assim que nasceu o Plano B — uma consultoria independente voltada para brasileiros que querem aprender sobre Bitcoin de maneira simples, segura e sem jargões complicados. A ideia surgiu da minha vontade de compartilhar conhecimento com quem quer se proteger financeiramente, mas se sente perdido em meio a tanta informação difícil e confusa.
+          Depois de anos ajudando amigos e conhecidos a entender o Bitcoin de forma prática, senti que era hora de oficializar esse trabalho. Foi assim que nasceu o plano B — uma consultoria independente voltada para brasileiros que querem aprender sobre Bitcoin de maneira simples, segura e sem jargões complicados. A ideia surgiu da minha vontade de compartilhar conhecimento com quem quer se proteger financeiramente, mas se sente perdido em meio a tanta informação difícil e confusa.
 
 <br />  
-          <br />Como “Bitcoin Concierge” (sim, esse título existe — e não, não uso gravata borboleta 🎩), meu objetivo é tornar o Bitcoin acessível para qualquer pessoa, independentemente do seu nível técnico. Para isso, também lancei uma newsletter gratuita onde compartilho conteúdo direto ao ponto, sem enrolação.
+          <br />Como “Bitcoin Concierge” (sim, esse título existe — e não, não uso gravata borboleta 🎩), meu objetivo é tornar o Bitcoin acessível para qualquer pessoa, independentemente do seu nível técnico. Para isso, também lancei uma newsletter gratuita onde compartilho conteúdo direto ao ponto, sem enrolação. O plano B é o meu jeito de contribuir com mais educação financeira no Brasil.
         </p>
 
         <div className="flex justify-center gap-6 text-xl">
